@@ -1,0 +1,11 @@
+{
+  "main_site_page": {
+    "cookie_modal": {
+      "action": "Dostosuj",
+      "cookie_settings": {
+        "action": "Zaakceptuj wybrane",
+        "analytical_cookies": true
+      }
+    }
+  }
+}
