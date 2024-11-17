@@ -1,0 +1,39 @@
+stages:
+  - test
+
+variables:
+  PLAYWRIGHT_BROWSERS_PATH: 0
+
+cache:
+  paths:
+    - .cache/ms-playwright
+
+test_chromium:
+  stage: test
+  image: python:3.9
+  script:
+    - pip install pytest playwright
+    - playwright install
+    - pytest --browser chromium tests/
+  tags:
+    - docker
+
+test_firefox:
+  stage: test
+  image: python:3.9
+  script:
+    - pip install pytest playwright
+    - playwright install
+    - pytest --browser firefox tests/
+  tags:
+    - docker
+
+test_webkit:
+  stage: test
+  image: python:3.9
+  script:
+    - pip install pytest playwright
+    - playwright install
+    - pytest --browser webkit tests/
+  tags:
+    - docker
